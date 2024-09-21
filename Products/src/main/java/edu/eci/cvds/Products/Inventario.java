@@ -2,10 +2,11 @@ package edu.eci.cvds.Products;
 import java.util.ArrayList;
 
 public class Inventario {
-    private ArrayList<Products> productos;
-    private ArrayList<Subscriber> suscriptores;
+    private ArrayList<Products> productos = new ArrayList<>();
+    private ArrayList<Subscriber> suscriptores = new ArrayList<>();
 
     public Inventario(Subscriber AgenteAdvertencia, Subscriber AgenteLog){
+        System.out.println(suscriptores);
         suscriptores.add(AgenteLog);
         suscriptores.add(AgenteAdvertencia);
     }
