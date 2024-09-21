@@ -14,7 +14,7 @@ public class Products{
         return idProducto;
     }
 
-    public void setIdTareo(String idProducto) {
+    public void setIdProducto(String idProducto) {
         this.idProducto = idProducto;
     }
 
@@ -30,7 +30,7 @@ public class Products{
         return precio;
     }
 
-    public void setPrecio(Integer precio) {
+    public void setPrecioProducto(Integer precio) {
         this.precio = precio;
     }
 
