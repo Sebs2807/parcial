@@ -49,4 +49,12 @@ public class Products{
     public Integer getCantidad() {
         return cantidad;
     }
+
+    public boolean equals(Products producto){
+        if(nombreProducto.equals(producto.getNombreProducto())){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

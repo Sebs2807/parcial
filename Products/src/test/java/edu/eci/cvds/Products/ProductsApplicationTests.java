@@ -22,8 +22,48 @@ class ProductsApplicationTests {
 		p.setNombreProducto("nombre1");
 		p.setPrecioProducto(1);
 		i.agregarProducto(p);
-		System.out.println(p.getCantidad());
 		assertEquals(1,p.getCantidad());
-		System.out.println(i.getProductos());
+	}
+
+	@Test
+	public void shouldIncreaseProduct(){
+		Products p = new Products();
+		p.setCantidad(1);
+		p.setCategoria("categoria1");
+		p.setIdProducto("id1");
+		p.setNombreProducto("nombre1");
+		p.setPrecioProducto(1);
+		i.agregarProducto(p);
+		i.agregarProducto(p);
+		assertEquals(2,p.getCantidad());
+	}
+
+	@Test
+	public void shouldModifyProduct(){
+		Products p = new Products();
+		p.setCantidad(1);
+		p.setCategoria("categoria1");
+		p.setIdProducto("id1");
+		p.setNombreProducto("nombre1");
+		p.setPrecioProducto(1);
+		i.agregarProducto(p);
+		i.modificarProducto(p.getNombreProducto(), 6);
+		assertEquals(6,p.getCantidad());
+	}
+
+	@Test
+	public void shouldInformSubscribers(){
+		Products p = new Products();
+		p.setCantidad(1);
+		p.setCategoria("categoria1");
+		p.setIdProducto("id1");
+		p.setNombreProducto("nombre1");
+		p.setPrecioProducto(1);
+		i.agregarProducto(p);
+		i.modificarProducto(p.getNombreProducto(), 6);
+
+		for(Subscriber b : i.getSubscribers()){
+			assertTrue(b.estaNotificado());
+		}
 	}
 }

@@ -6,7 +6,6 @@ public class Inventario {
     private ArrayList<Subscriber> suscriptores = new ArrayList<>();
 
     public Inventario(Subscriber AgenteAdvertencia, Subscriber AgenteLog){
-        System.out.println(suscriptores);
         suscriptores.add(AgenteLog);
         suscriptores.add(AgenteAdvertencia);
     }
@@ -41,5 +40,9 @@ public class Inventario {
 
     public ArrayList<Products> getProductos(){
         return productos;
+    }
+
+    public ArrayList<Subscriber> getSubscribers(){
+        return suscriptores;
     }
 }
